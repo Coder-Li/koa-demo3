@@ -1,4 +1,5 @@
 var router = require('koa-router')();
+var koaBody = require('koa-body')();
 
 router.get('/', function *(next) {
   yield this.render('pages/index', {
@@ -7,6 +8,7 @@ router.get('/', function *(next) {
 });
 
 router.get('/department', showDepartment);
+router.post('/department/add', addDepartment);
 
 function *showDepartment(next){
   yield this.render('pages/department',{
@@ -21,6 +23,14 @@ function *showDepartment(next){
       description: 'yesyesyes'
     }]
   })
+}
+
+function *addDepartment(next){
+   var _depart = this.request.body.depart;
+   console.log(_depart);
+   yield this.render('pages/linshi', {
+      title: 'linshi'
+   })
 }
 module.exports = router;
 

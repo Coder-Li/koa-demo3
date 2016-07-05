@@ -35,13 +35,13 @@
 <div id="addDepartment" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="#" method="POST">
+            <form action="/department/add" method="POST">
                 <div class="modal-header">添加部门</div>
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="topname">上级部门</label>
                         <!--<input name="depart[topname]" type="text" id="topname" class="form-control">-->
-                        <select name="topname" id="topname">
+                        <select name="depart[topname]" id="topname">
                             <option value="0">总部</option>
                             <% for (var j = 0;j < departments.length; j++){%>
                                 <option value=<%= j %>><%= departments[j].name %></option>

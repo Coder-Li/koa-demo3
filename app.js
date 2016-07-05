@@ -5,7 +5,11 @@ var app = require('koa')()
   , views = require('koa-views')
   , onerror = require('koa-onerror')
   , path = require('path');
-
+  //mongose
+  var mongoose = require('mongoose');
+  // connnect-mongose
+  var dbUrl = 'mongodb://127.0.0.1/Oa';
+  mongoose.connnect(dbUrl);
 
 // global middlewares
 app.use(views('views', {
