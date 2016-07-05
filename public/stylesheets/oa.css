@@ -118,3 +118,10 @@ div#sidebar{
 .evenrowcolor{
     background-color:#c3dde0;
 }
+
+#topname{
+  width:160px;
+  height:40px;
+  line-height:25px;
+  font-size: 2em;
+}
