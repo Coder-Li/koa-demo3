@@ -7,12 +7,26 @@
                 <th>职能说明</th>
                 <th>相关操作</th>
             </tr>
-            <tr>
+            <!--<tr>
                 <td><%= departments[0].name %></td>
                 <td><%= departments[0].topname %></td>
                 <td><%= departments[0].description %></td>
                 <td><%= departments.length %></td>
             </tr>
+            <tr>
+                <td><%= departments[1].name %></td>
+                <td><%= departments[1].topname %></td>
+                <td><%= departments[1].description %></td>
+                <td><%= departments.length %></td>
+            </tr>-->
+            <% for(var i = 0;i < departments.length; i++ ){%>
+            <tr>
+                <td><%= departments[i].name %></td>
+                <td><%= departments[i].topname %></td>
+                <td><%= departments[i].description %></td>
+                <td><%= departments.length %></td>
+            </tr>
+            <% } %>
         </table>
         <a class="btn btn-primary" href="#">新建部门</a>
     </div>
