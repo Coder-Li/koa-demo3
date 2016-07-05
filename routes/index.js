@@ -9,7 +9,7 @@ router.get('/', function *(next) {
 });
 
 router.get('/department', showDepartment);
-router.post('/department/add', showDepartment, addDepartment);
+router.post('/department', showDepartment, addDepartment);
 
 function *showDepartment(next){
   yield this.render('pages/department',{
