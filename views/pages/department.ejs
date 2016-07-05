@@ -1,0 +1,40 @@
+<% include ./layout %>
+    <div>
+        <table border="1" id="department">
+            <tr>
+                <th>部门名称</th>
+                <th>上级部门名称</th>
+                <th>职能说明</th>
+                <th>相关操作</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+        </table>
+        <a class="btn btn-primary" href="#">新建部门</a>
+    </div>
+
+<script type="text/javascript">
+    function altRows(id){
+        if(document.getElementsByTagName){  
+            var table = document.getElementById(id);  
+            var rows = table.getElementsByTagName("tr"); 
+            
+            for(i = 0; i < rows.length; i++){          
+                if(i % 2 == 0){
+                    rows[i].className = "evenrowcolor";
+                }else{
+                    rows[i].className = "oddrowcolor";
+                }      
+            }
+        }
+    }
+    $(document).ready(function(){
+        altRows('department');
+    })
+</script>
+
+<% include ../includes/foot %>
