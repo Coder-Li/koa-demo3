@@ -9,7 +9,7 @@ var app = require('koa')()
   var mongoose = require('mongoose');
   // connnect-mongose
   var dbUrl = 'mongodb://127.0.0.1/Oa';
-  mongoose.connnect(dbUrl);
+  mongoose.connect(dbUrl);
 
 // global middlewares
 app.use(views('views', {

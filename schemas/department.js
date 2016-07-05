@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 
 // 定义数据类型
-var Department = new Schema({
+var DepartmentSchema = new Schema({
     name: String,
     topname: {
         type: String,

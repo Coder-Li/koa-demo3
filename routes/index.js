@@ -1,5 +1,6 @@
 var router = require('koa-router')();
 var koaBody = require('koa-body')();
+var Department = require('../models/department');
 
 router.get('/', function *(next) {
   yield this.render('pages/index', {
@@ -8,7 +9,7 @@ router.get('/', function *(next) {
 });
 
 router.get('/department', showDepartment);
-router.post('/department/add', addDepartment);
+router.post('/department/add', showDepartment, addDepartment);
 
 function *showDepartment(next){
   yield this.render('pages/department',{
@@ -25,11 +26,18 @@ function *showDepartment(next){
   })
 }
 
-function *addDepartment(next){
+function addDepartment(next){
+   var res = this.response;
    var _depart = this.request.body.depart;
    console.log(_depart);
-   yield this.render('pages/linshi', {
-      title: 'linshi'
+
+   var department = new Department(_depart);
+   department.save(function(err, department){
+      if(err){
+        console.log(err);
+      }
+
+      // res.redirect('/department')
    })
 }
 module.exports = router;
